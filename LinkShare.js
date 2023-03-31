@@ -104,7 +104,7 @@ define(['jquery', 'qlik', 'angular', './propertiesPanel', 'text!./button.html', 
 						}
 						//Otherwise it just creates the selections part of the URL
 						else {
-							returnObject.selectionURLPart += "/select/"+encodeURIComponent(item.split(tagSeparator)[0]) + "/%5B" + encodeURIComponent(item.split(tagSeparator)[1].replace(tagSeparator,";"))+"%5D";
+							returnObject.selectionURLPart += "/select/"+encodeURI(item.split(tagSeparator)[0]) + "/%5B" + encodeURI(item.split(tagSeparator)[1].split(valueSeparator).join("];["))+"%5D";
 							splitForBrackets = returnObject.selectionURLPart.split("%3B%3B%3B%3B");
 							returnObject.selectionURLPart = splitForBrackets.join("%5D%3B%5B");
 						}
@@ -218,8 +218,10 @@ define(['jquery', 'qlik', 'angular', './propertiesPanel', 'text!./button.html', 
                 host: window.location.hostname,
                 prefix: window.location.pathname.substr(0, window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1),
                 port: window.location.port,
-                isSecure: window.location.protocol === "https:"
+                isSecure: window.location.protocol === "https:",
+		fullURL: window.location.href
             }
+	
             setButton()
                 // Getting Application ID
             if (layout.props.appId == 0) {
@@ -243,7 +245,7 @@ define(['jquery', 'qlik', 'angular', './propertiesPanel', 'text!./button.html', 
 
             /*Creating base part of URL including clearing any leftover 
             selections before opening the new page with our selections*/
-					
+	    // The baseURL is only for azure based Qlik Sense			
             let baseURL = (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + "/azure/sense/app/" + applicationIdFr + "/sheet/" + CurrentSheet + "/clearselections";
 
             //Defining the separators used in GetCurrentSelections function call
@@ -268,8 +270,8 @@ define(['jquery', 'qlik', 'angular', './propertiesPanel', 'text!./button.html', 
             }
 
             //If in edit mode, do nothing
-            if (window.location.pathname.includes("/state/edit"))
-                return;
+            //if (window.location.pathname.includes("/state/edit"))
+            //    return;
 
             //Making sure the maximum selected values in a field is at least one
             let maxValuesSelectedInField = layout.props.maxSelected;
