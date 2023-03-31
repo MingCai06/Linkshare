@@ -2,9 +2,9 @@
     "name": "LinkShare!",
     "description": "Creates a link based on Current Selections for distribution or sending the user to another page",
     "type": "visualization",
-    "version": "1.0",
+    "version": "1.1",
     "icon": "extension",
-    "author": "Alex Byrd",
+    "author": "Ming Cai",
     "keywords": "qlik-sense, visualization",
     "dependencies": {
         "qlik-sense": ">=2.2.x"
