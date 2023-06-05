@@ -2,10 +2,10 @@
     "name": "LinkShare!",
     "description": "Creates a link based on Current Selections for distribution or sending the user to another page",
     "type": "visualization",
-    "preview" : "share.png",
-    "version": "1.0",
+    "preview" : "share2.png",
+    "version": "2.0",
     "icon": "extension",
-    "author": "Ming Cai",
+    "author": "Ming Cai(MHP)",
     "keywords": "qlik-sense, visualization",
     "dependencies": {
         "qlik-sense": ">=2.2.x"
