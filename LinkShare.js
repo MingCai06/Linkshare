@@ -136,6 +136,9 @@ define(['jquery', 'qlik', 'angular', 'ng!$q', 'css!./LinkShare.css'], function (
                             }
                         }
                     }
+                },
+                settings: {
+                    uses: "settings"
                 }
             }
         },
@@ -464,12 +467,12 @@ var addOnActivateButtonEvent = function ($element, config, layout, url) {
                         console.log('item :', item);
                         if (item.split("/[").length < 2) {
                             //console.log('rest_substring_tmp :',rest_substring_tmp);
-                            showing_text += 'Filter Name: ' + decodeURI(rest_substring_tmp.split("/")[0]) + '\n' + 'Filter Werte: ' + '\n\t' + item.substring(1, item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '-'.repeat(20) + '\n'
+                            showing_text += 'Filtername: ' + decodeURI(rest_substring_tmp.split("/")[0]) + '\n' + 'Filterwert: ' + '\n\t' + item.substring(1, item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '-'.repeat(20) + '\n'
                             // console.log('Filtername:',rest_substring_tmp.split("/")[0] + '\n' + item);
                         } else {
                             let sub_item = item.split(item.split("/[")[0] + "/")[1]
                             console.log('sub_item:', sub_item);
-                            showing_text += 'Filter nName: ' + item.split("/[")[0] + '\n' + 'Filter Werte: ' + '\n\t' + sub_item.substring(1, sub_item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '------------------------' + '\n'
+                            showing_text += 'Filtername: ' + item.split("/[")[0] + '\n' + 'Filterwert: ' + '\n\t' + sub_item.substring(1, sub_item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '------------------------' + '\n'
                             //console.log('Filtervalue:',item.split("/")[0] + '\n' + item.split("/")[1]);
                         }
                     });
@@ -531,11 +534,11 @@ var addOnActivateButtonEvent = function ($element, config, layout, url) {
                 decoderURL_sting_array.forEach(function (item) {
                     console.log('item :', item);
                     if (item.split("/[").length < 2) {
-                        showing_text += 'Filter Name: ' + decodeURI(rest_substring_tmp.split("/")[0]) + '\n' + 'Filter Werte: ' + '\n\t' + item.substring(1, item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '-'.repeat(20) + '\n'
+                        showing_text += 'Filtername: ' + decodeURI(rest_substring_tmp.split("/")[0]) + '\n' + 'Filterwert: ' + '\n\t' + item.substring(1, item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '-'.repeat(20) + '\n'
                     } else {
                         let sub_item = item.split(item.split("/[")[0] + "/")[1]
                         console.log('sub_item:', sub_item);
-                        showing_text += 'Filter nName: ' + item.split("/[")[0] + '\n' + 'Filter Werte: ' + '\n\t' + sub_item.substring(1, sub_item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '------------------------' + '\n'
+                        showing_text += 'Filtername: ' + item.split("/[")[0] + '\n' + 'Filterwert: ' + '\n\t' + sub_item.substring(1, sub_item.length - 1).replaceAll("];[", ",\n\t") + '\n' + '\n' + '------------------------' + '\n'
                     }
                 });
 
