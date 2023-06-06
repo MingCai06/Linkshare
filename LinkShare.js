@@ -193,7 +193,7 @@ define(['jquery', 'qlik', 'angular', 'ng!$q', 'css!./LinkShare.css'], function (
 
             /*Creating base part of URL including clearing any leftover 
             selections before opening the new page with our selections*/
-            var baseURL = (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + "/sense/app/" + applicationIdFr + "/sheet/" + SheetID + "/state/analysis/clearselections";
+            var baseURL = (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + "/azure/sense/app/" + applicationIdFr + "/sheet/" + SheetID + "/state/analysis/clearselections";
 
 
             //If the user chose to output the link through an email, only create a button, otherwise create a textbox as well
