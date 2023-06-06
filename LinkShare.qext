@@ -1,5 +1,5 @@
 {
-    "name": "LinkShare!",
+    "name": "LinkShare!_dev",
     "description": "Creates a link based on Current Selections for distribution or sending the user to another page",
     "type": "visualization",
     "preview" : "share2.png",
